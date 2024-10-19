@@ -1,0 +1,23 @@
+#configurar o redis
+parameters:
+    redis_host: '127.0.0.1'   # Endereço do servidor Redis
+    redis_port: 6379           # Porta padrão do Redis
+    redis_password: null       # Se o Redis estiver protegido por senha, adicione aqui
+
+services:
+    App\Service\CepStorageService:
+        arguments:
+            $client: '@Predis\Client'
+    
+    Predis\Client:
+        arguments:
+            - 
+                scheme: tcp
+                host: '%redis_host%'
+                port: '%redis_port%'
+                password: '%redis_password%'
+# redis:
+#     clients:
+#         default:
+#             type: 'predis' # 'phpredis' 
+#             dsn: '%env(REDIS_DSN)%' # variável de ambiente

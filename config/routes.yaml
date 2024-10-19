@@ -3,3 +3,12 @@ controllers:
         path: ../src/Controller/
         namespace: App\Controller
     type: attribute
+
+
+consultar:
+    path: /cep
+    controller: App\Controller\CepController::consultarCep
+
+resultadoCep:
+    path: /resultadoCep/{cep}
+    controller: App\Controller\CepController::resultadoCep

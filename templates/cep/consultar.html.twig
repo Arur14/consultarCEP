@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Consultar CEP{% endblock %}
+
+{% block body %}
+<div class="col-md-12">
+    <h2>Consultar CEP</h2>
+</div>
+<div class="col-md-2">
+    {{ form_start(form) }}
+        {{ form_row(form.cep) }}
+        <button class="btn btn-success" type="submit">Consultar</button>
+    {{ form_end(form) }}
+</div>
+{% endblock %}
