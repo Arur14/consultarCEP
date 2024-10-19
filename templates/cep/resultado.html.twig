@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Consultar CEP{% endblock %}
+
+{% block body %}
+<div class="col-md-12">
+        <h2>Resultado CEP</h2>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <label style="font-size: 20px;">Resultado para o CEP: <strong>{{ data.cep }}</strong></label>
+        </div>
+        <div class="card-body">
+            <ul>
+                <li>Logradouro: {{ data.logradouro }}</li>
+                <li>Bairro: {{ data.bairro }}</li>
+                <li>Cidade: {{ data.localidade }}</li>
+                <li>Estado: {{ data.uf }}</li>
+                <li>Região: {{ data.regiao }}</li>
+                <li>DDD: {{ data.ddd }}</li>
+                <li>IBGE: {{ data.ibge }}</li>
+            </ul>
+            <div class="col-md-2">
+                <a class="btn btn-primary" href="{{ path('consultar') }}">Consultar outro CEP</a>
+            </div>
+        </div>       
+    </div>
+{% endblock %}
